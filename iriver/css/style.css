@@ -1,0 +1,349 @@
+
+
+/*
+마진병합현상
+
+1. 부모와 자식이 같은라인에 있을때, 자식에게 마진을 줬을경우 부모도 같은 마진값을 받아서 내려옴.
+2. 두개의 마진이 겹칠경우
+
+* 수직구조에서만 발생
+* 1층에서만 발생
+
+*/
+
+#header{
+    border-bottom: 1px solid #ff5730;
+    margin-bottom: 30px;
+}
+
+#header .inner{
+    width: 970px;
+    margin: 0 auto;
+    font-size: 0;
+    position: relative;
+
+}
+
+
+#header .inner .logo{
+    margin-top: 36px;
+    /*padding-top: 41px;*/
+    float: left;
+}
+
+#header .inner .topmenu{
+    text-align: right;
+    padding-top: 5px;
+    height: 35px;
+}
+
+#header .inner .topmenu > li {
+    /*float: right;*/
+    display:inline-block;
+    vertical-align: middle;
+    margin-left:13px;
+}
+
+#header .inner .topmenu > li:last-child{
+    margin-left: 20px;
+}
+
+
+#header .inner .gnb{
+    margin-left: 120px;
+}
+
+
+#header .inner .gnb > li{
+    float: left;
+    margin-right: 10px;
+}
+
+#header .inner .search{
+    position: absolute;
+    right: 0;
+    top: 41px;
+    box-shadow: 2px 2px 2px #f1f1f1;
+    /*          x y z(blur) color */
+}
+
+#header .inner .search input{
+    width: 127px;
+    height: 18px;
+    border: 1px solid #d8d8d8;
+    border-right: none;
+    outline:none;
+    color: orangered;
+}
+
+/*속성 선택자 */
+#header .inner .search input::placeholder{
+    color: dodgerblue;
+    text-indent: 30px;
+}
+/*------------
+   //header
+--------------*/
+
+#container{
+    width: 970px;
+    margin: 0 auto 40px;
+}
+
+
+#visual{
+    position: relative;
+}
+
+#visual .product{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#visual .prev{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform:translateY(-50%);
+    z-index: 100;
+}
+
+#visual .next{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform:translateY(-50%);
+    z-index: 100;
+}
+
+#main_slider{
+
+}
+
+/*------//visual------*/
+
+
+#contents{
+    margin-bottom: 70px;
+}
+
+#contents > article{
+    width: 304px;
+    /*height: 170px;*/
+    /*background: dodgerblue;*/
+    float: left;
+    margin-right: 31px;
+
+}
+
+#contents > article:last-child{
+    width: 300px;
+    margin-right: 0;
+}
+
+
+#contents .title{
+    text-align: right;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 0 10px 7px;
+    margin-bottom: 15px;
+}
+
+#contents .title > img{
+    float: left;
+}
+
+
+#contents .list{
+    text-align: right;
+    padding: 0 10px;
+}
+
+#contents .list > li{
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 4px;
+    color: #858585;
+    background: url("../images/main/bullet01.gif")no-repeat left center;
+    padding-left: 8px;
+}
+
+#contents .list > li > a{
+    color: #5b5b5b;
+    float: left;
+}
+
+#contents .list > li > a:hover{
+    text-decoration: underline;
+    color: orangered;
+}
+
+/*------//contents------*/
+
+#bottom_link{
+
+}
+
+/*#bottom_link > li {*/
+/*    float: left;*/
+/*    margin-right: 30px;*/
+/*    position: relative;*/
+/*}*/
+
+/*#bottom_link > li:before{*/
+/*    content: 'asdasd';*/
+/*    background: red;*/
+/*    width: 1px;*/
+/*    height: 34px;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*}*/
+
+/*#bottom_link > li:after{*/
+/*    content: 'asdasd';*/
+/*    background: blue;*/
+/*    width: 1px;*/
+/*    height: 34px;*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    top: 0;*/
+/*}*/
+
+/*#bottom_link > li:last-child:after{*/
+/*    display: none;*/
+/*}*/
+
+#bottom_link > li {
+    float: left;
+    background: url("../images/main/dot_line.gif")no-repeat left top;
+    padding-left: 28px;
+    margin-left: 24px;
+    position: relative;
+}
+
+
+#bottom_link > li:after{
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.56);
+    transition:all 1s;
+}
+
+#bottom_link > li:hover:after{
+    background: rgba(0, 0, 0, 0);
+}
+#bottom_link > li:first-child{
+    background: none;
+    padding-left: 0;
+}
+
+#bottom_link > li > a{
+
+}
+
+
+/*------//bottom_link------*/
+
+/*------------
+   //container
+--------------*/
+
+#footer{
+    background: #2b2b2b;
+}
+
+
+#footer .inner{
+    width: 970px;
+    margin: 0 auto;
+    height: 80px;
+    font-size: 0;
+    position: relative;
+}
+
+#footer .inner .foot_link{
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+
+#footer .inner .foot_link > li{
+    float: left;
+    margin-left:11px;
+    padding-left:13px;
+    background: url("../images/common/footer/foot_line.gif")no-repeat left top;
+}
+
+
+#footer .inner .foot_link > li:first-child{
+    background: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+#footer .inner .family{
+    position: absolute;
+    right: 0;
+    bottom: 44px;
+}
+
+
+
+#footer .family > ul{
+    background: #fff;
+    display: none;
+}
+
+#footer .family:hover > ul{
+    display: block;
+}
+
+#footer .family > ul > li{
+
+}
+
+#footer .family > ul > li > a{
+    font-size: 11px;
+    color: #333;
+    display: block;
+    padding: 4px 12px;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+
+#footer .family > ul > li > a:hover{
+    background: #333;
+    color: #fff;
+}
+/*------------
+   //footer
+--------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

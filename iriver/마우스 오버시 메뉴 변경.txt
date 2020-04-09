@@ -1,0 +1,15 @@
+$(function(){ // 문서가 열렸을때 실행
+
+	$('.topmenu > li').mouseenter(function(){ // 타겟 자식 li를 마우스 오버했을때
+		// this = 타겟의 자식 li중에서 현재 마우스 오버한 대상
+		$(this).children().children('img').attr('src',$(this).children().children('img').attr('src').replace('.gif','_on.gif'))
+		// 마우스 오버하고 있는 li의  자식, 자식 중에서 img태그 선택 , attr(속성) src의 값을  replace(변경) .gif찾아서 _on.gif로 변경
+	})
+	
+	$('.topmenu > li').mouseleave(function(){ // 타겟의 자식 li를 마우스 아웃했을때
+		$(this).children().children('img').attr('src',$(this).children().children('img').attr('src').replace('_on.gif','.gif'))
+	})	
+	
+	
+
+});

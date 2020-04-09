@@ -1,0 +1,125 @@
+
+
+
+body{
+    height: 10000px;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+}
+
+
+.wrap{
+    border: 5px solid #333;
+    margin: 0 auto;
+    perspective: 600px;
+}
+
+.over{
+    overflow: hidden;
+}
+
+
+.box01{
+    background: red;
+    transition: all 1s cubic-bezier(1,-0.23, 0, 1.57);
+}
+
+.box01:hover{
+    width: 400px;
+    height: 400px;
+    background: dodgerblue;
+}
+
+
+
+.box02{
+    transition:all 1s;
+    background: radial-gradient(dodgerblue,red,aquamarine);
+}
+
+
+.box02:hover{
+    transform: scaleX(2); /* 1 = 100% */
+}
+
+
+
+
+
+.box03{
+    transition:all 1s;
+    background: green;
+    transform-origin: 0 0;
+}
+
+.wrap:hover .box03{
+    transform: rotate(360deg);
+}
+
+
+
+
+.box04{
+    transition:all 1s;
+    background: yellow;
+}
+
+.wrap:hover .box04{
+    transform:rotateY(1turn);
+}
+
+
+
+
+.box05{
+    background: tomato;
+    transition:all 1s;
+}
+
+.wrap:hover .box05{
+    transform: translate(50%,50%);
+}
+
+
+
+.box06{
+    background: #000;
+    animation: move cubic-bezier(1,-0.23, 0, 1.57) 2s alternate infinite;
+}
+
+
+
+@keyframes move {
+    0%{
+        transform:translate(0,0)rotate(0);
+        opacity: 1;
+    }
+    50%{
+        transform:translate(300px,0)rotate(1turn);
+        opacity: 1;
+    }
+    100%{
+        transform:translate(600px,-300px)rotate(2turn);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
